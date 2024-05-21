@@ -8,8 +8,11 @@ const Header = ({ showSideBar, setShowSideBar }) => {
         <div className="flex items-center gap-2.5">
           <span
             onClick={() => setShowSideBar(!showSideBar)}
-            className="cursor-pointer"
+            className="cursor-pointer md:hidden"
           >
+            <FourLineIcon />
+          </span>
+          <span className="cursor-pointer hidden md:block">
             <FourLineIcon />
           </span>
           <div className="bg-[#EBEDF0] flex items-center gap-2.5 p-1.5 max-w-[360px] sm:w-[360px]">

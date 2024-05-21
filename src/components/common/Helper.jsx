@@ -21,6 +21,17 @@ export const sideBarData = [
     icon: <CatalogIcon />,
     tabs: "Catalog",
     path: "/catalogs",
+    hasDropdown: true,
+    subItems: [
+      {
+        tabs: "Campaigns",
+        path: "/catalog/campaigns",
+      },
+      {
+        tabs: "SEO",
+        path: "/catalog/seo",
+      },
+    ],
   },
   {
     icon: <UserIcon />,
@@ -36,6 +47,17 @@ export const sideBarData = [
     icon: <MarketingIcon />,
     tabs: "Marketing",
     path: "/marketing",
+    hasDropdown: true,
+    subItems: [
+      {
+        tabs: "Campaigns",
+        path: "/marketing/campaigns",
+      },
+      {
+        tabs: "SEO",
+        path: "/marketing/seo",
+      },
+    ],
   },
   {
     icon: <CommunticationIcon />,
@@ -61,8 +83,71 @@ export const sideBarData = [
     icon: <SettingsIcon />,
     tabs: "Settings",
     path: "/settings",
+    hasDropdown: true,
+    subItems: [
+      {
+        tabs: "Profile",
+        path: "/settings/profile",
+      },
+      {
+        tabs: "Security",
+        path: "/settings/security",
+      },
+    ],
   },
 ];
+// export const sideBarData = [
+//   {
+//     icon: <DashboardIcon />,
+//     tabs: "Dashboard",
+//     path: "/",
+//   },
+//   {
+//     icon: <CatalogIcon />,
+//     tabs: "Catalog",
+//     path: "/catalogs",
+//   },
+//   {
+//     icon: <UserIcon />,
+//     tabs: "Users",
+//     path: "/users",
+//   },
+//   {
+//     icon: <SIPsIcon />,
+//     tabs: "SIPs",
+//     path: "/spis",
+//   },
+//   {
+//     icon: <MarketingIcon />,
+//     tabs: "Marketing",
+//     path: "/marketing",
+//   },
+//   {
+//     icon: <CommunticationIcon />,
+//     tabs: "Communications",
+//     path: "/communications",
+//   },
+//   {
+//     icon: <TransactionIcon />,
+//     tabs: "Transactions",
+//     path: "/transactions",
+//   },
+//   {
+//     icon: <PrivacyPoliceIcon />,
+//     tabs: "Privacy Policy",
+//     path: "/privacy-policy",
+//   },
+//   {
+//     icon: <TermConditionIcon />,
+//     tabs: "Terms and Conditions",
+//     path: "/term-conditions",
+//   },
+//   {
+//     icon: <SettingsIcon />,
+//     tabs: "Settings",
+//     path: "/settings",
+//   },
+// ];
 
 export const recentTranjections = [
   {
