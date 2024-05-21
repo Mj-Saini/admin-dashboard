@@ -20,16 +20,6 @@ const SideBar = () => {
         <img src={logo} alt="logo" />
       </div>
       <div className="flex flex-col bg-[#3D464D] h-full">
-        {/* {sideBarData.map((items, index) => (
-          <Link
-            to={items.path}
-            key={index}
-            className="flex items-center px-5 py-3 gap-2.5 hover:bg-[#26313A] hover:rounded-l-[20px] group-hover w-full duration-300 icon"
-          >
-            {items.icon}
-            <h2 className="font-normal text-sm text-white"> {items.tabs}</h2>
-          </Link>
-        ))} */}
         {sideBarData.map((item, index) => (
           <div key={index}>
             <div

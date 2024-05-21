@@ -96,58 +96,6 @@ export const sideBarData = [
     ],
   },
 ];
-// export const sideBarData = [
-//   {
-//     icon: <DashboardIcon />,
-//     tabs: "Dashboard",
-//     path: "/",
-//   },
-//   {
-//     icon: <CatalogIcon />,
-//     tabs: "Catalog",
-//     path: "/catalogs",
-//   },
-//   {
-//     icon: <UserIcon />,
-//     tabs: "Users",
-//     path: "/users",
-//   },
-//   {
-//     icon: <SIPsIcon />,
-//     tabs: "SIPs",
-//     path: "/spis",
-//   },
-//   {
-//     icon: <MarketingIcon />,
-//     tabs: "Marketing",
-//     path: "/marketing",
-//   },
-//   {
-//     icon: <CommunticationIcon />,
-//     tabs: "Communications",
-//     path: "/communications",
-//   },
-//   {
-//     icon: <TransactionIcon />,
-//     tabs: "Transactions",
-//     path: "/transactions",
-//   },
-//   {
-//     icon: <PrivacyPoliceIcon />,
-//     tabs: "Privacy Policy",
-//     path: "/privacy-policy",
-//   },
-//   {
-//     icon: <TermConditionIcon />,
-//     tabs: "Terms and Conditions",
-//     path: "/term-conditions",
-//   },
-//   {
-//     icon: <SettingsIcon />,
-//     tabs: "Settings",
-//     path: "/settings",
-//   },
-// ];
 
 export const recentTranjections = [
   {
