@@ -22,7 +22,8 @@ const SideBar = () => {
       <div className="flex flex-col bg-[#3D464D] h-full">
         {sideBarData.map((item, index) => (
           <div key={index}>
-            <div
+            <Link
+              to={item.path}
               className="flex items-center justify-between px-5 py-3 gap-2.5 hover:bg-[#26313A] hover:rounded-l-[20px] w-full duration-300 icon cursor-pointer"
               onClick={() => handleDropdown(index)}
             >
@@ -40,7 +41,7 @@ const SideBar = () => {
                   <DropdownArrowIcon />
                 </div>
               )}
-            </div>
+            </Link>
             {item.subItems && openDropdown === index && (
               <div className="flex flex-col pl-10 ">
                 {item.subItems.map((subItem, subIndex) => (

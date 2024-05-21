@@ -8,7 +8,8 @@
   fill: #FFAE00;
 }
 
-#sidebar .icon:last-child:hover svg path {
+
+#sidebar .icon:last-of-type:hover svg path {
   stroke: #FFAE00;
   fill: transparent;
 }

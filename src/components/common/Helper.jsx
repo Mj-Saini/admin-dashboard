@@ -20,7 +20,6 @@ export const sideBarData = [
   {
     icon: <CatalogIcon />,
     tabs: "Catalog",
-    path: "/catalogs",
     hasDropdown: true,
     subItems: [
       {
@@ -46,7 +45,6 @@ export const sideBarData = [
   {
     icon: <MarketingIcon />,
     tabs: "Marketing",
-    path: "/marketing",
     hasDropdown: true,
     subItems: [
       {
@@ -82,7 +80,6 @@ export const sideBarData = [
   {
     icon: <SettingsIcon />,
     tabs: "Settings",
-    path: "/settings",
     hasDropdown: true,
     subItems: [
       {
