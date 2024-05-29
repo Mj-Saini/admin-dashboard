@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ThreeDotsIcon } from "./common/Icon";
 import { recentTranjections, tableData } from "./common/Helper";
 import { BarChart } from "@mui/x-charts";
+import Popup from "./common/Popup";
 
 const Dashboard = () => {
+  const [apiData, setApiData] = useState([]);
+  const [openPopupIndex, setOpenPopupIndex] = useState(null);
+
+  const handleTogglePopup = (index) => {
+    if (openPopupIndex === index) {
+      setOpenPopupIndex(null);
+    } else {
+      setOpenPopupIndex(index);
+    }
+  };
+
+  useEffect(() => {
+    fetch("https://crud-django-c7ri.onrender.com/api/user/")
+      .then((response) => response.json())
+      .then((responseData) => setApiData(responseData.data));
+  }, []);
+
   return (
     <>
-      <div className="px-5 bg-[#F5F7FA] h-full pb-5">
+      <div className="px-5 bg-[#F5F7FA] h-full pb-5 z-[-1] relative">
         <h2 className="font-medium text-[30px] text-black pt-5">Dashboard</h2>
         <div className="flex flex-wrap gap-5 lg:gap-9 mt-5">
           <div className="flex flex-col items-center w-full sm:w-1/3 backdrop_shadow bg-white p-5 gap-5 rounded-[10px]">
@@ -56,7 +74,7 @@ const Dashboard = () => {
                 <h2 className="font-normal text-base text-black">
                   Comparison Graph Inversters SPIs
                 </h2>
-                <div>
+                <div className="relative !z-0">
                   <BarChart
                     xAxis={[
                       {
@@ -106,45 +124,68 @@ const Dashboard = () => {
               <thead>
                 <tr className="w-full font-normal text-base text-black border-b border-black/24">
                   <th className="py-4 px-4 text-left  font-normal text-base">
-                    Sr N.
-                  </th>
-                  <th className="py-4 px-4 text-left  font-normal text-base">
                     Name
                   </th>
-                  <th className="py-4 px-4 text-left  font-normal text-base">
+                  <th className="py-4 px-4 text-left capitalize font-normal text-base">
                     Registration
                   </th>
-                  <th className="py-4 px-4 text-left  font-normal text-base">
-                    City / State
+                  <th className="py-4 px-4 text-left capitalize font-normal text-base">
+                    E-mail
                   </th>
-                  <th className="py-4 px-4 text-left  font-normal text-base">
-                    Member Status
+                  <th className="py-4 px-4 text-left capitalize font-normal text-base">
+                    phone Number
                   </th>
-                  <th className="py-4 px-4 text-left  font-normal text-base">
-                    Total Investment
+                  <th className="py-4 px-4 text-left capitalize font-normal text-base">
+                    City
+                  </th>
+                  <th className="py-4 px-4 text-left capitalize font-normal text-base">
+                    State
+                  </th>
+                  <th className="py-4 px-4 text-left capitalize font-normal text-base">
+                    action
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {tableData.map((item, index) => (
-                  <tr key={item.id} className="w-full even:bg-gray-100">
-                    <td className="py-2 px-4">
-                      {String(index + 1).padStart(2, "0")}
+                {apiData.slice(0, 5).map((items, index) => (
+                  <tr key={index} className="w-full even:bg-gray-100">
+                    <td className="py-3.5 text-black/80 text-base font-normal px-4">
+                      {items.first_name} {items.last_name}
                     </td>
                     <td className="py-3.5 text-black/80 text-base font-normal px-4">
-                      {item.name}
+                      {items.registration}
                     </td>
                     <td className="py-3.5 text-black/80 text-base font-normal px-4">
-                      {item.registration}
+                      {items.email}
                     </td>
                     <td className="py-3.5 text-black/80 text-base font-normal px-4">
-                      {item.cityState}
+                      {items.phone_no}
                     </td>
                     <td className="py-3.5 text-black/80 text-base font-normal px-4">
-                      {item.memberStatus}
+                      {items.city}
                     </td>
                     <td className="py-3.5 text-black/80 text-base font-normal px-4">
-                      {item.totalInvestment}
+                      {items.state}
+                    </td>
+                    <td className="py-3.5 text-black/80 text-base font-normal px-4">
+                      <div
+                        onClick={() => handleTogglePopup(index)}
+                        className="w-3 h-4 flex flex-col justify-between items-center cursor-pointer relative"
+                      >
+                        {openPopupIndex === index && (
+                          <div>
+                            <div className="absolute top-full z-10 ">
+                              <Popup
+                                setOpenPopupIndex={setOpenPopupIndex}
+                                userId={items.id}
+                              />
+                            </div>
+                          </div>
+                        )}
+                        <span className="w-1 h-1 inline-block rounded-3xl bg-black"></span>
+                        <span className="w-1 h-1 inline-block rounded-3xl bg-black"></span>
+                        <span className="w-1 h-1 inline-block rounded-3xl bg-black"></span>
+                      </div>
                     </td>
                   </tr>
                 ))}

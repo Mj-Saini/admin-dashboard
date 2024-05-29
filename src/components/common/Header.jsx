@@ -5,6 +5,8 @@ const Header = ({ showSideBar, setShowSideBar }) => {
   return (
     <>
       <div className="flex items-center px-2.5 gap-2.5 justify-between py-2 ">
+      
+
         <div className="flex items-center gap-2.5">
           <span
             onClick={() => setShowSideBar(!showSideBar)}
@@ -12,7 +14,10 @@ const Header = ({ showSideBar, setShowSideBar }) => {
           >
             <FourLineIcon />
           </span>
-          <span className="cursor-pointer hidden md:block">
+          <span
+          
+            className="cursor-pointer hidden md:block"
+          >
             <FourLineIcon />
           </span>
           <div className="bg-[#EBEDF0] flex items-center gap-2.5 p-1.5 max-w-[360px] sm:w-[360px]">

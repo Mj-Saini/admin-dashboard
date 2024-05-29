@@ -4,7 +4,7 @@ import { sideBarData } from "./Helper";
 import { Link } from "react-router-dom";
 import { DropdownArrowIcon } from "./Icon";
 
-const SideBar = () => {
+const SideBar = ({ setShowSideBar }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const handleDropdown = (index) => {
@@ -25,10 +25,12 @@ const SideBar = () => {
             <Link
               to={item.path}
               className="flex items-center justify-between px-5 py-3 gap-2.5 hover:bg-[#26313A] hover:rounded-l-[20px] w-full duration-300 icon cursor-pointer"
-              onClick={() => handleDropdown(index)}
+              onClick={() => {
+                handleDropdown(index);
+                setShowSideBar(false);
+              }}
             >
               <div className="flex items-center gap-2.5">
-                {" "}
                 {item.icon}
                 <h2 className="font-normal text-sm text-white">{item.tabs}</h2>
               </div>

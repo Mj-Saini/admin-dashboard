@@ -4,6 +4,10 @@
   font-family: "Outfit", sans-serif;
 }
 
+body {
+  background: #F5F7FA;
+}
+
 #sidebar .icon:hover svg path {
   fill: #FFAE00;
 }
@@ -35,4 +39,13 @@
 
 .css-1qdzy9k-MuiBarElement-root {
   fill: #F94144 !important;
+}
+
+.delete_icon svg {
+  width: 60px;
+  height: 60px;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
 }

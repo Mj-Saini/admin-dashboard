@@ -155,3 +155,36 @@ export const tableData = [
     totalInvestment: "₹ 5000",
   },
 ];
+
+export const addNewUserData = [
+  {
+    label: "First Name",
+    placeholder: "Enter First Name",
+    name: "first_name",
+  },
+  {
+    label: "last Name",
+    placeholder: "Enter last Name",
+    name: "last_name",
+  },
+  {
+    label: "e-mail",
+    placeholder: "enter mail",
+    name: "email",
+  },
+  {
+    label: "phone number ",
+    placeholder: "Enter phone number ",
+    name: "phone_no",
+  },
+  {
+    label: "city",
+    placeholder: "Enter city",
+    name: "city",
+  },
+  {
+    label: "state",
+    placeholder: "Enter state",
+    name: "state",
+  },
+];

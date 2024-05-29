@@ -28,7 +28,7 @@ const DashboardPage = () => {
           }`}
         >
           <div className="h-full bg-[#3D464D] z-10 relative">
-            <SideBar />
+            <SideBar setShowSideBar={setShowSideBar} />
           </div>
         </div>
         <div className="w-full md:w-9/12 xl:w-10/12">
@@ -39,7 +39,7 @@ const DashboardPage = () => {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/catalogs" element={<Catalog />} />
-              <Route path="/users" element={<Users />} />
+              <Route path="/users/*" element={<Users />} />
               <Route path="/spis" element={<SIPs />} />
               <Route path="/communications" element={<Communication />} />
               <Route path="/transactions" element={<Transaction />} />
