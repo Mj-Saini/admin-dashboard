@@ -15,7 +15,7 @@ const EditUser = () => {
     state: "",
   });
   useEffect(() => {
-    fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}`)
+    fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}/`)
       .then((res) => res.json())
       .then((res) => setUserData(res.data));
   }, [id]);
@@ -26,15 +26,7 @@ const EditUser = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (id) {
-    //   fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}/`, {
-    //     method: "PATCH",
-    //     body: JSON.stringify(userData),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((res) => console.log(res));
-    //   navigate("/users");
-    // }
+    
     fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}/`, {
       method: "PATCH",
       headers: {
@@ -44,6 +36,7 @@ const EditUser = () => {
     })
       .then((res) => res.json())
       .then((res) => setUserData(res.data));
+    navigate("/users");
   };
 
   return (
