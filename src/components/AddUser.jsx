@@ -59,7 +59,7 @@ const AddUser = () => {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col flex-wrap "
+        className="flex flex-col flex-wrap"
         action=""
       >
         <div className="flex justify-between items-center mt-5">

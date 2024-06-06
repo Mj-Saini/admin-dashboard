@@ -26,18 +26,24 @@ const EditUser = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (id) {
-      fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}/`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      })
-        .then((res) => res.json())
-        .then((res) => console.log(res));
-      navigate("/users");
-    }
+    // if (id) {
+    //   fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}/`, {
+    //     method: "PATCH",
+    //     body: JSON.stringify(userData),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((res) => console.log(res));
+    //   navigate("/users");
+    // }
+    fetch(`https://crud-django-c7ri.onrender.com/api/user/${id}/`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((res) => res.json())
+      .then((res) => setUserData(res.data));
   };
 
   return (

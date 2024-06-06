@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ThreeDotsIcon } from "./common/Icon";
-import { recentTranjections, tableData } from "./common/Helper";
+import { recentTranjections } from "./common/Helper";
 import { BarChart } from "@mui/x-charts";
 import Popup from "./common/Popup";
 
@@ -170,16 +170,14 @@ const Dashboard = () => {
                     <td className="py-3.5 text-black/80 text-base font-normal px-4">
                       <div
                         onClick={() => handleTogglePopup(index)}
-                        className="w-3 h-4 flex flex-col justify-between items-center cursor-pointer relative"
+                        className="w-4 h-4 flex flex-col justify-between items-end cursor-pointer relative ps-2"
                       >
                         {openPopupIndex === index && (
-                          <div>
-                            <div className="absolute top-full z-10 ">
-                              <Popup
-                                setOpenPopupIndex={setOpenPopupIndex}
-                                userId={items.id}
-                              />
-                            </div>
+                          <div className="absolute top-full z-10">
+                            <Popup
+                              setOpenPopupIndex={setOpenPopupIndex}
+                              userId={items.id}
+                            />
                           </div>
                         )}
                         <span className="w-1 h-1 inline-block rounded-3xl bg-black"></span>

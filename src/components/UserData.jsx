@@ -81,14 +81,19 @@ const UserData = () => {
               <td className="py-3.5 text-black/80 text-base font-normal px-4">
                 <div
                   onClick={() => handleTogglePopup(index)}
-                  className="w-3 h-4 flex flex-col justify-between items-center cursor-pointer relative"
+                  className="w-3 h-4 flex flex-col justify-between items-center cursor-pointer relative ps-3"
                 >
                   {openPopupIndex === index && (
                     <div>
-                      <div className="absolute top-full z-10 ">
+                      <div
+                        onClick={() => setOpenPopupIndex}
+                        className="fixed top-0 left-0 h-screen w-screen bg-black/50 "
+                      ></div>
+                      <div className="absolute top-full left-0 z-10 ">
                         <Popup
-                          setOpenPopupIndex={setOpenPopupIndex}
                           userId={items.id}
+                          setApiData={setApiData}
+                          apiData={apiData}
                         />
                       </div>
                     </div>
